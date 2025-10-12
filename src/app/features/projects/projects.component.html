@@ -1,0 +1,27 @@
+<section class="section" id="projets">
+  <div class="section__header">
+    <p class="section__eyebrow">{{ section.header.eyebrow }}</p>
+    <h2 class="section__title">{{ section.header.title }}</h2>
+  </div>
+  <div class="projects-grid">
+    @for (project of section.items; track project.name) {
+      <article class="card project-card">
+        <header>
+          <h3>{{ project.name }}</h3>
+          <p class="project-card__stack">{{ project.stack }}</p>
+        </header>
+        <p>{{ project.description }}</p>
+        @if (project.link) {
+          <a
+            class="project-card__link"
+            [href]="project.link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Voir le projet
+          </a>
+        }
+      </article>
+    }
+  </div>
+</section>

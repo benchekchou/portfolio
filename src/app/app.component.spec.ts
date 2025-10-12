@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { cvData } from './core/data/cv';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -14,16 +15,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'portfolio-hamza' title`, () => {
+  it('should expose the cv data', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('portfolio-hamza');
+    expect(app.data).toEqual(cvData);
   });
 
-  it('should render title', () => {
+  it('should render the hero heading', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, portfolio-hamza');
+    expect(compiled.querySelector('.hero h1')?.textContent).toContain(cvData.identity.name);
   });
 });

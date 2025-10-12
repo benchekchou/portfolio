@@ -1,0 +1,58 @@
+<section class="section section--two-columns" id="formation">
+  <div>
+    <div class="section__header">
+      <p class="section__eyebrow">{{ section.education.header.eyebrow }}</p>
+      <h2 class="section__title">{{ section.education.header.title }}</h2>
+    </div>
+    <ul class="list">
+      @for (item of section.education.items; track trackListItem($index, item)) {
+        @if (isLink(item)) {
+          @let link = item;
+          <li>
+            <span class="list__label">{{ link.label }}</span>
+            @if (link.verifyHref) {
+              <a
+                class="list__verify"
+                [href]="link.verifyHref"
+                [attr.target]="link.external ? '_blank' : null"
+                [attr.rel]="link.external ? 'noopener noreferrer' : null"
+              >
+                {{ link.verifyLabel ?? 'Verifier' }}
+              </a>
+            }
+          </li>
+        } @else {
+          <li>{{ item }}</li>
+        }
+      }
+    </ul>
+  </div>
+  <div>
+    <div class="section__header">
+      <p class="section__eyebrow">{{ section.certifications.header.eyebrow }}</p>
+      <h2 class="section__title">{{ section.certifications.header.title }}</h2>
+    </div>
+    <ul class="list">
+      @for (item of section.certifications.items; track trackListItem($index, item)) {
+        @if (isLink(item)) {
+          @let link = item;
+          <li>
+            <span class="list__label">{{ link.label }}</span>
+            @if (link.verifyHref) {
+              <a
+                class="list__verify"
+                [href]="link.verifyHref"
+                [attr.target]="link.external ? '_blank' : null"
+                [attr.rel]="link.external ? 'noopener noreferrer' : null"
+              >
+                {{ link.verifyLabel ?? 'Verifier' }}
+              </a>
+            }
+          </li>
+        } @else {
+          <li>{{ item }}</li>
+        }
+      }
+    </ul>
+  </div>
+</section>

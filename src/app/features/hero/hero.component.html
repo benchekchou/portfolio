@@ -1,0 +1,30 @@
+<section class="hero" id="accueil">
+  <div class="hero__visual" aria-hidden="true">
+    <div class="hero__photo"></div>
+  </div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">{{ hero.eyebrow }}</p>
+    <h1>{{ identity.name }} — {{ identity.title }}</h1>
+    <p class="hero__lead">
+      {{ hero.lead }}
+    </p>
+    <div class="hero__highlights">
+      @for (highlight of hero.highlights; track highlight) {
+        <span class="chip">{{ highlight }}</span>
+      }
+    </div>
+    <div class="hero__actions">
+      <a class="btn btn--primary" [href]="hero.primaryAction.href">
+        {{ hero.primaryAction.label }}
+      </a>
+      <a
+        class="btn btn--ghost"
+        [href]="hero.secondaryAction.href"
+        [attr.target]="hero.secondaryAction.external ? '_blank' : null"
+        [attr.rel]="hero.secondaryAction.external ? 'noopener noreferrer' : null"
+      >
+        {{ hero.secondaryAction.label }}
+      </a>
+    </div>
+  </div>
+</section>

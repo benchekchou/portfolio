@@ -1,0 +1,39 @@
+<section class="section section--footer" id="contact">
+  <div class="contact">
+    <div>
+      <p class="section__eyebrow">{{ section.languages.header.eyebrow }}</p>
+      <h2 class="section__title">{{ section.languages.header.title }}</h2>
+      <ul class="list list--inline">
+        @for (lang of section.languages.items; track lang.label) {
+          <li>
+            <span class="list__label">{{ lang.label }}</span>
+            <span class="list__value">{{ lang.level }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+    <div>
+      <p class="section__eyebrow">{{ section.contacts.header.eyebrow }}</p>
+      <h2 class="section__title">{{ section.contacts.header.title }}</h2>
+      <ul class="list list--contact">
+        @for (contact of section.contacts.items; track contact.label) {
+          <li>
+            <a
+              [href]="contact.href"
+              [attr.target]="contact.external ? '_blank' : null"
+              [attr.rel]="contact.external ? 'noopener noreferrer' : null"
+            >
+              {{ contact.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>
+    © {{ currentYear }} {{ identityName }} — {{ footerNote }}
+  </p>
+</footer>
