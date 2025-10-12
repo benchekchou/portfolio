@@ -1,59 +1,50 @@
-# PortfolioHamza
+﻿
+# Portfolio Hamza
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+Ce projet Angular (CLI 19.2.7 avec SSR) sert de portfolio moderne pour présenter les compétences, expériences et projets de Hamza Benchekchou.
 
-## Development server
+## Développement local
 
-To start a local development server, run:
+1. Installer les dépendances  
+   ```bash
+   npm install
+   ```
+2. Lancer le serveur  
+   ```bash
+   ng serve
+   ```
+3. Ouvrir [http://localhost:4200](http://localhost:4200)
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Build
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+Le build SSR est généré dans `dist/portfolio-hamza/`.
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## Construction du portfolio (étapes)
 
-For end-to-end (e2e) testing, run:
+1. **Initialisation** – `ng new portfolio-hamza --ssr`, nettoyage du template Angular par défaut.  
+2. **Données centralisées** – Fichier `src/app/core/data/cv.ts` avec types (Link, Experience, Project, etc.) couvrant identité, compétences, expériences, projets, formation, certifications, contacts.  
+3. **Components standalone** – Création des features: `hero`, `skills`, `experience`, `projects`, `education`, `contact`. Chaque composant reçoit les données via inputs et encapsule son HTML/CSS.  
+4. **Design & layout** – Thème sombre, header sticky, hero visuel avec photo `public/assets/DSC_90.png`, grilles responsive, timeline expérience, cartes projets. Variables globales dans `src/styles.scss`.  
+5. **Responsive/mobile** – Media queries <900px / <640px / <600px pour timeline, boutons, grilles; optimisation mobile (timeline en colonnes, buttons stack).  
+6. **Contenus dynamiques** – Navigation auto depuis `cvData`, certifications avec lien de vérification, contact `mailto:`/`tel:`/LinkedIn, CV téléchargeable depuis `public/assets/Hamza-Benchekchou-CV.pdf`.  
+7. **Tests & build** – Vérification `ng test`, `npm run build` (SSR) après chaque refactor; correction des erreurs liées à la compilation serveur.  
+8. **Docs & déploiement** – README mis à jour, instructions Vercel, rappel pour placer les fichiers dans `public/assets/`, tests manuels sur mobile.
 
-```bash
-ng e2e
-```
+### Structure utile
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Dossier                | Description                                      |
+|------------------------|--------------------------------------------------|
+| `public/assets/`       | CV, photo, fichiers statiques téléchargeables    |
+| `src/app/core/data/`   | Source de données typée du portfolio             |
+| `src/app/features/`    | Components standalone par section                |
+| `dist/portfolio-hamza` | Build SSR généré (non versionné dans Git)        |
