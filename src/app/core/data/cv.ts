@@ -113,7 +113,7 @@ export const cvData: CvData = {
     { label: 'Contact', href: '#contact' },
     {
       label: 'CV',
-      href: 'assets/hamza.benchekchou.pdf',
+      href: 'assets/hamzaBenchekchou.pdf',
       external: true,
     },
   ],
@@ -219,14 +219,16 @@ export const cvData: CvData = {
       },
       {
         period: 'Sept. 2025 – Présent',
-        company: 'Soluxury Hospitality',
+        company: ' Ark-x Talent Solutions',
         role: 'Développeur Logiciel – Développement Full Stack',
         summary:
-          'Développement de services backend Node.js et intégration frontend Angular pour une plateforme hôtelière.',
+          'Formation intensive de 5 mois encadrée par des experts du domaine',
         highlights: [
-          'Développement de services backend avec Node.js, Express et Prisma',
-          'Optimisation des requêtes SQL et intégration front Angular',
-          'Participation aux revues de code et amélioration des performances',
+          'Réalisation de projets complets avec Java, Spring Boot, Angular et PostgreSQL. ',
+          'Développement d’applications web d’entreprise conformes aux standards Industriels.',
+          ' Application des bonnes pratiques de Clean Code, architecture logicielle et sécurité.',
+          '  Mise en œuvre d’un projet final (Capstone) intégrant backend, frontend, \n' +
+          'DevOps et tests d’intégration. ',
         ],
       },
     ],
@@ -243,11 +245,18 @@ export const cvData: CvData = {
         description:
           'Application de gestion des films, séances et réservations avec tests unitaires et d’intégration.',
       },
+
       {
         name: 'Gestion de comptes bancaires',
-        stack: 'Spring Boot - MySQL - Hibernate - Angular',
+        stack: 'Spring Boot - MySQL -  Hibernate - architecture hexagonale - Angular',
         description:
-          'Backend et frontend pour la gestion des comptes, transactions et historiques bancaires.',
+          'Services pour comptes, opérations et historiques, organisés selon le modèle hexagonal (ports et adaptateurs).',
+      },
+      {
+        name: 'Gestion d’étudiants en console ',
+        stack: 'Java (from scratch), application console, fichiers texte',
+        description:
+          'Développée from scratch en Java pour gérer les étudiants, leurs notes par cours et des statistiques (moyenne, meilleur élève, élèves en échec), avec persistance dans un fichier students.txt et stratégie pluggable pour le calcul des moyennes.',
       },
     ],
   },
@@ -260,6 +269,7 @@ export const cvData: CvData = {
       items: [
         'Licence en Mathématiques et Informatique – USMBA, Fès (2020–2023)',
         'Master en Systèmes Intelligents et Mobiles – USMBA, Fès (2023–2025)',
+        'Doctor of Philosophy - PhD - Computer Science USMBA, Fès (2025–2028)'
       ],
     },
     certifications: {
